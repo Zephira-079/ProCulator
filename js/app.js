@@ -3,6 +3,8 @@ const log = document.querySelector(".log")
 const mode = document.querySelector(".mode")
 const startlog = document.querySelector(".startlog")
 const refresh = document.querySelector(".refresh")
+const reset = document.querySelector(".reset")
+
 
 let logmode = 0
 
@@ -28,6 +30,7 @@ mode.addEventListener("click", () => {
             mode.style.bottom = "50vh"
             startlog.style.bottom = "50vh"
             refresh.style.bottom = "50vh"
+            reset.style.bottom = "50vh"
         }
         break
         case 2 : {
@@ -35,6 +38,7 @@ mode.addEventListener("click", () => {
             mode.style.bottom = "80vh"
             startlog.style.bottom = "80vh"
             refresh.style.bottom = "80vh"
+            reset.style.bottom = "80vh"
         }
         break
         default : {
@@ -42,6 +46,7 @@ mode.addEventListener("click", () => {
             mode.style.bottom = "0"
             startlog.style.bottom = "0"
             refresh.style.bottom = "0"
+            reset.style.bottom = "0"
             logmode = 0
         }
     }
@@ -60,4 +65,7 @@ startlog.addEventListener("click", () => {
 refresh.addEventListener("click",() => {
     localStorage.setItem("editor_cache", text_editor.value)
     location.reload()
+})
+reset.addEventListener("click",() => {
+    text_editor.value = ``
 })
