@@ -1,5 +1,5 @@
 const text_editor = document.querySelector(".text_editor")
-const log = document.querySelector(".log")
+const log_ = document.querySelector(".log")
 const mode = document.querySelector(".mode")
 const startlog = document.querySelector(".startlog")
 const refresh = document.querySelector(".refresh")
@@ -15,7 +15,7 @@ if(localStorage.getItem("editor_cache")) {
 }
 
 function echo(text) {
-    log.append(`${new Date().toLocaleTimeString("en-US",{hour12:false})} : ${text}`,document.createElement("br"))
+    log_.append(`${new Date().toLocaleTimeString("en-US",{hour12:false})} : ${text}`,document.createElement("br"))
 }
 
 function sleep(seconds) {
@@ -26,7 +26,7 @@ mode.addEventListener("click", () => {
     logmode += 1
     switch (logmode) {
         case 1 : {
-            log.style.bottom = "-30vh"
+            log_.style.bottom = "-30vh"
             mode.style.bottom = "50vh"
             startlog.style.bottom = "50vh"
             refresh.style.bottom = "50vh"
@@ -34,7 +34,7 @@ mode.addEventListener("click", () => {
         }
         break
         case 2 : {
-            log.style.bottom = "0"
+            log_.style.bottom = "0"
             mode.style.bottom = "80vh"
             startlog.style.bottom = "80vh"
             refresh.style.bottom = "80vh"
@@ -42,7 +42,7 @@ mode.addEventListener("click", () => {
         }
         break
         default : {
-            log.style.bottom = "-80vh"
+            log_.style.bottom = "-80vh"
             mode.style.bottom = "0"
             startlog.style.bottom = "0"
             refresh.style.bottom = "0"
@@ -52,15 +52,21 @@ mode.addEventListener("click", () => {
     }
 
 })
-startlog.addEventListener("click", () => {
+startlog.addEventListener("click",async () => {
     //execute code
     try {
-        eval(text_editor.value)
+        if (println) echo(println)
+        if (pln) echo(pln)
+            
+        const awake = `(async function () {
+            ${text_editor.value}
+        })()`
+        eval(awake)
     }
     catch {
 
     }
-    log.scrollTo(0,log.scrollHeight)
+    log_.scrollTo(0,log_.scrollHeight)
 })
 refresh.addEventListener("click",() => {
     localStorage.setItem("editor_cache", text_editor.value)

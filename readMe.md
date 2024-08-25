@@ -5,6 +5,12 @@
 ###
 ###
 
+# Update
+- apk removed
+- added some math functions
+- updated to website only due to apk not reliable
+- added sleep function
+
 ## Description
 - ProCulator Was Designed And Inspired by Programming And Calculating
 - While Calculator Has Limited Syntax, Well Programming Can Do A Lot!!!
