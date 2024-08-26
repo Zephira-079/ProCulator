@@ -5,6 +5,35 @@ const phi = (1 + Math.sqrt(5)) / 2
 const φ = phi
 const Φ = phi
 
+const K = -273.15
+
+
+const mm = 0.001
+const cm = 0.01
+const dm = 0.1
+const m = 1
+const km = 1000
+
+const ft = 0.3048
+const yd = 0.9144
+const mi = 1609.34
+const inch = 0.0254
+const nmile = 1852
+
+const mg = 0.001
+const cg = 0.01
+const dg = 0.1
+const g = 1
+const kg = 1000
+
+const lb = 453.5929094356397
+const oz = 28.349524691869018
+const t = 1000000
+const ct = 0.2
+
+
+
+
 function help() {
 
     const helptext = `
@@ -13,6 +42,11 @@ function help() {
     // precise: float, returns a precision
     `
     console.log(helptext)
+}
+
+function convert(value, from = 1, to = 1) {
+    // default was meter
+    return value * from/to
 }
 
 function perc(n) {
