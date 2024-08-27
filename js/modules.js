@@ -17,5 +17,5 @@ function choice(...array) {
 }
 
 function hline() {
-    return "----------------------"
+    echo("----------------------")
 }
