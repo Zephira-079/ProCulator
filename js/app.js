@@ -22,23 +22,29 @@ function sleep(seconds) {
     return new Promise(resolve => setTimeout(resolve, seconds * 1000));
 }
 
+function logLatest() {
+    log_.scrollTo(0,log_.scrollHeight)
+}
+
 mode.addEventListener("click", () => {
     logmode += 1
     switch (logmode) {
         case 1 : {
-            log_.style.bottom = "-30vh"
-            mode.style.bottom = "50vh"
-            startlog.style.bottom = "50vh"
-            refresh.style.bottom = "50vh"
-            reset.style.bottom = "50vh"
+            log_.style.height = "50dvh"
+            log_.style.bottom = "0"
+            mode.style.bottom = "50dvh"
+            startlog.style.bottom = "50dvh"
+            refresh.style.bottom = "50dvh"
+            reset.style.bottom = "50dvh"
         }
         break
         case 2 : {
+            log_.style.height  = "80dvh"
             log_.style.bottom = "0"
-            mode.style.bottom = "80vh"
-            startlog.style.bottom = "80vh"
-            refresh.style.bottom = "80vh"
-            reset.style.bottom = "80vh"
+            mode.style.bottom = "80dvh"
+            startlog.style.bottom = "80dvh"
+            refresh.style.bottom = "80dvh"
+            reset.style.bottom = "80dvh"
         }
         break
         default : {
@@ -50,6 +56,7 @@ mode.addEventListener("click", () => {
             logmode = 0
         }
     }
+    logLatest()
 
 })
 startlog.addEventListener("click",async () => {
@@ -66,7 +73,7 @@ startlog.addEventListener("click",async () => {
     catch {
 
     }
-    log_.scrollTo(0,log_.scrollHeight)
+    logLatest()
 })
 refresh.addEventListener("click",() => {
     localStorage.setItem("editor_cache", text_editor.value)
