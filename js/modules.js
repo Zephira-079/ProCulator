@@ -15,3 +15,7 @@ function choice(...array) {
 
     return flattenArray[Math.floor(Math.random() * flattenArray.length)]
 }
+
+function hline() {
+    return "----------------------"
+}
