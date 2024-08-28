@@ -6,10 +6,10 @@
 ###
 
 # Version
-- version: 0.0.4
+- version: 0.0.5
 
 # Update
-- fixed log
+- added bind
 
 ## Description
 - ProCulator Was Designed And Inspired by Programming And Calculating
