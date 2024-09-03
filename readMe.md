@@ -6,10 +6,10 @@
 ###
 
 # Version
-- version: 0.0.5
+- version: 0.0.6
 
 # Update
-- added bind
+- updated js/math.js
 
 ## Description
 - ProCulator Was Designed And Inspired by Programming And Calculating
