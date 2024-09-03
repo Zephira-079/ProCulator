@@ -6,6 +6,8 @@ const φ = phi
 const Φ = phi
 
 const K = -273.15
+const C = 5/9
+const F = 9/5
 
 
 const mm = 0.001
@@ -49,6 +51,40 @@ function convert(value, from = 1, to = 1) {
     return value * from/to
 }
 
+
+function temp_convert(value, from, to) {
+    if (from === C && to === F) return (value * F) + 32;
+    if (from === F && to === C) return (value - 32) * C;
+    if (from === C && to === K) return value - K;
+    if (from === K && to === C) return value + K;
+    if (from === F && to === K) return ((value - 32) * C) - K;
+    if (from === K && to === F) return ((value + K) * F) + 32;
+
+    throw new Error('Invalid conversion');
+}
+
+
+function quadratic(a, b, c, discriminant = 1) {
+    discriminant
+
+    const has_solution = pow(b, 2) - (4 * a * c)
+    if (has_solution < 0) return undefined
+
+    const x = (-b + ((discriminant == 0 ? 1 : sign(discriminant)) * sqrt(has_solution))) / (2 * a)
+    return x
+}
+
+function sign(n) {
+    switch (true) {
+        case (n > 0):
+            return 1;
+        case (n < 0):
+            return -1;
+        default:
+            return 0;
+    }
+}
+
 function perc(n) {
     // percentage
     return precision(n / 100)
@@ -79,6 +115,12 @@ function radical(base, _radical, exponent = 1) {
 }
 
 function exp(n, exponent = 1) {
+    //exponent 
+
+    return n ** exponent
+}
+
+function pow(n, exponent = 1) {
     //exponent 
 
     return n ** exponent
@@ -286,3 +328,4 @@ function mean(...n) {
     const flattenedArray = n.flat(Infinity)
     return flattenedArray.reduce((acc, num) => acc + (typeof num === 'number' ? num : 0), 0) / n.length
 }
+
