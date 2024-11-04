@@ -34,8 +34,6 @@ const t = 1000000
 const ct = 0.2
 
 
-
-
 function help() {
 
     const helptext = `
@@ -44,6 +42,10 @@ function help() {
     // precise: float, returns a precision
     `
     console.log(helptext)
+}
+
+function length(a, b) {
+    return Math.abs(b - a)
 }
 
 function convert(value, from = 1, to = 1) {
@@ -143,6 +145,10 @@ function fact(n) {
 }
 
 function hyp(a, b) {
+    return sqrt(exp(a, 2) + exp(b, 2))
+}
+// rename of hyp, also hyp will replace the other words lol
+function PT(a, b) {
     return sqrt(exp(a, 2) + exp(b, 2))
 }
 
