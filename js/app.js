@@ -62,16 +62,36 @@ mode.addEventListener("click", () => {
     beginMode()
 })
 
+let cslArray = []
+
+let handler = {
+  set: function(obj, prop, value) {
+    if (prop === 'l') {
+        cslArray.push(value)
+      obj[prop] = value
+    }
+    return true
+  }
+}
+
+let target = {}
+let cs = new Proxy(target, handler)
+
 function beginLog() {
     //execute code
     try {
-        if (println) echo(println)
-        if (pln) echo(pln)
-
         const awake = `(async function () {
             ${text_editor.value}
         })()`
         eval(awake)
+
+        
+        echo("<--------cs.l---start--------->")
+        for (let i of cslArray) {
+            echo(i)
+        }
+        cslArray = new Array()
+        echo("<--------cs.l---end--------->")
     }
     catch {
 
