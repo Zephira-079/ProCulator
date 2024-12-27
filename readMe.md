@@ -6,7 +6,7 @@
 ###
 
 # Version
-- version: 0.0.6
+- version: 0.0.6.1
 
 # Update
 - updated js/math.js
@@ -18,3 +18,4 @@
 - Enjoy!!! :)
 - ProCulator use "eval()" just to execute javascript code,"Be Cautious" :)
 - Also Spaghetti code (TnT)
+- pi was updated as "3.141592653589793238462643383279502884197"
