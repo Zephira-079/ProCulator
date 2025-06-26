@@ -6,10 +6,17 @@
 ###
 
 # Version
+<<<<<<< main
 - version: 0.0.6.1
 
 # Update
 - updated js/math.js
+=======
+- version: 0.0.6.2
+
+# Update
+- Just For Pull Request Achievement Lmao
+>>>>>>> main
 
 ## Description
 - ProCulator Was Designed And Inspired by Programming And Calculating
