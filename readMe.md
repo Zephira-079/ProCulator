@@ -1,16 +1,6 @@
 # ProCulator (What a Nice Name XD)
 ### A Programming Calculator Created with HTML,CSS,JS
 
-###
-###
-###
-
-# Version
-- version: 0.0.6.2
-
-# Update
-- Just For Pull Request Achievement Lmao
-
 ## Description
 - ProCulator Was Designed And Inspired by Programming And Calculating
 - While Calculator Has Limited Syntax, Well Programming Can Do A Lot!!!
